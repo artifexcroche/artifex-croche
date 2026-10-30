@@ -1,0 +1,618 @@
+/* =====================================
+   PALETA DE CORES
+===================================== */
+
+:root {
+    --bordo: #6B1727;
+    --branco: #FFFFFF;
+    --preto: #171717;
+
+    --fonte-titulo: 'Playfair Display', serif;
+    --fonte-texto: 'DM Sans', sans-serif;
+}
+
+
+/* =====================================
+   CONFIGURAÇÕES GERAIS
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--branco);
+    color: var(--preto);
+    font-family: var(--fonte-texto);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =====================================
+   CABEÇALHO
+===================================== */
+
+.header {
+    width: 100%;
+    min-height: 75px;
+    padding: 12px 6%;
+    background: var(--branco);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    color: var(--preto);
+    letter-spacing: 4px;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.logo small {
+    color: var(--bordo);
+    font-size: 10px;
+    letter-spacing: 6px;
+    text-align: center;
+    margin-top: 3px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.navbar a {
+    color: var(--preto);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--bordo);
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: var(--preto);
+    font-size: 27px;
+    cursor: pointer;
+}
+
+
+/* =====================================
+   TÍTULOS E SEÇÕES
+===================================== */
+
+.section {
+    padding: 42px 6%;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 25px;
+}
+
+.subtitle {
+    color: var(--bordo);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.section-heading h2,
+.contact h2 {
+    color: var(--preto);
+    font-family: var(--fonte-titulo);
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.section-heading > p:not(.subtitle) {
+    color: var(--preto);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   BOTÕES
+===================================== */
+
+.btn {
+    display: inline-block;
+    padding: 13px 24px;
+
+    background: var(--branco);
+    color: var(--bordo);
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    border: 1px solid var(--branco);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--preto);
+    border-color: var(--preto);
+    color: var(--branco);
+}
+
+
+/* =====================================
+   BANNER PRINCIPAL
+===================================== */
+
+.hero {
+    min-height: 390px;
+    padding: 35px 6%;
+    background: var(--bordo);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 22px;
+}
+
+.hero-content {
+    max-width: 500px;
+}
+
+.hero-content .subtitle {
+    color: var(--branco);
+}
+
+.hero-content h1 {
+    color: var(--branco);
+    font-family: var(--fonte-titulo);
+    font-size: clamp(42px, 5vw, 62px);
+    line-height: 1.12;
+    font-weight: 500;
+    margin-bottom: 17px;
+}
+
+.hero-content > p:not(.subtitle) {
+    color: var(--branco);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.hero-image {
+    width: 100%;
+    height: 320px;
+    background: var(--bordo);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/* =====================================
+   SOBRE A MARCA
+===================================== */
+
+.about {
+    background: var(--branco);
+}
+
+.about-content {
+    max-width: 760px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+
+/* =====================================
+   BOLSAS
+===================================== */
+
+.products {
+    background: var(--branco);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.product-card {
+    text-align: center;
+    min-width: 0;
+}
+
+.image-frame {
+    width: 100%;
+    height: 270px;
+    background: var(--branco);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.3s;
+}
+
+.product-card img:hover {
+    transform: scale(1.03);
+}
+
+.product-card h3 {
+    color: var(--preto);
+    font-family: var(--fonte-titulo);
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 9px;
+}
+
+
+/* =====================================
+   ACESSÓRIOS
+===================================== */
+
+.accessories {
+    background: var(--bordo);
+}
+
+.accessories .section-heading h2,
+.accessories .section-heading > p:not(.subtitle) {
+    color: var(--branco);
+}
+
+.accessories .subtitle {
+    color: var(--branco);
+}
+
+.accessories-grid {
+    max-width: 680px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* FUNDO DAS FOTOS DAS FLORES */
+
+.accessories-grid .image-frame {
+    height: 270px;
+    background: var(--bordo);
+    overflow: hidden;
+}
+
+.accessories-grid .image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.accessories-grid .product-card h3 {
+    color: var(--branco);
+}
+
+
+/* =====================================
+   FRASE
+===================================== */
+
+.quote {
+    padding: 48px 6%;
+    background: var(--bordo);
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.quote p {
+    color: var(--branco);
+    font-family: var(--fonte-titulo);
+    font-size: clamp(25px, 3.5vw, 40px);
+    font-style: italic;
+    margin-bottom: 14px;
+}
+
+.quote span {
+    color: var(--branco);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+
+/* =====================================
+   GALERIA
+===================================== */
+
+.gallery {
+    background: var(--branco);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.gallery-item {
+    height: 230px;
+    background: var(--branco);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.03);
+}
+
+
+/* =====================================
+   CONTATO
+===================================== */
+
+.contact {
+    background: var(--bordo);
+    text-align: center;
+}
+
+.contact .subtitle,
+.contact h2,
+.contact > p:not(.subtitle) {
+    color: var(--branco);
+}
+
+.contact > p:not(.subtitle) {
+    margin: 12px 0 22px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   RODAPÉ
+===================================== */
+
+.footer {
+    background: var(--preto);
+    padding: 30px 6%;
+    text-align: center;
+}
+
+.footer-logo {
+    display: inline-block;
+    color: var(--branco);
+    font-family: var(--fonte-titulo);
+    font-size: 22px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: var(--branco);
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.footer small {
+    color: var(--branco);
+    font-size: 10px;
+}
+
+
+/* =====================================
+   TABLETS
+===================================== */
+
+@media (max-width: 950px) {
+
+    .header {
+        padding: 12px 5%;
+    }
+
+    .navbar {
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 30px 5%;
+        gap: 15px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =====================================
+   CELULARES
+===================================== */
+
+@media (max-width: 700px) {
+
+    .header {
+        min-height: 70px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+
+        position: absolute;
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+        padding: 22px;
+
+        background: var(--branco);
+
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 35px 6%;
+        gap: 15px;
+    }
+
+    .hero-content {
+        text-align: center;
+        margin: auto;
+    }
+
+    .hero-content h1 {
+        font-size: 46px;
+    }
+
+    .hero-image {
+        height: 270px;
+    }
+
+    .section {
+        padding: 35px 6%;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .image-frame {
+        height: 220px;
+    }
+
+    .accessories-grid {
+        gap: 14px;
+    }
+
+    .accessories-grid .image-frame {
+        height: 220px;
+        background: var(--bordo);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .gallery-item {
+        height: 170px;
+    }
+
+    .quote {
+        padding: 40px 6%;
+    }
+
+}
+
+
+/* =====================================
+   CELULARES PEQUENOS
+===================================== */
+
+@media (max-width: 400px) {
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-image {
+        height: 230px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .image-frame {
+        height: 270px;
+    }
+
+    .accessories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .accessories-grid .image-frame {
+        height: 260px;
+        background: var(--bordo);
+    }
+
+}
